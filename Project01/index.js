@@ -4,6 +4,7 @@ const users = require("./MOCK_DATA.json");
 const app = express();
 const PORT = 8000;
 
+
 //Middleware - plugin
 app.use(express.urlencoded({extended: false}));
 
@@ -25,7 +26,7 @@ app.route("/api/users/:id").get( (req, res)=>{
     const id = Number(req.params.id);
     const user = users.find((user)=> user.id === id);
     return res.json(user);
-    
+
 })
 .patch((req, res)=> {
     return res.json({status: 'pending'});
